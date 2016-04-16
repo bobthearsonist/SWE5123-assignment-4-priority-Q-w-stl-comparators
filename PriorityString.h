@@ -27,11 +27,17 @@ class PriorityString
 		// Postcondition: the priority of PriorityString is changed to n
 		void setPriority( unsigned n);
 
+		//comparison operators used to compare priority string objects in the priority queue
+		bool operator==(const PriorityString&) const;
+		bool operator<(const PriorityString&) const;
+		bool operator>(const PriorityString&) const;
+		bool operator()(const PriorityString&, const PriorityString&) const;
+
 	// Postcondition: The string value of PriorityString has been read in from stream.
 	friend istream& operator>> (istream& stream, PriorityString& ps);
 
 	// Postcondition: The string value of PriorityString has been output to stream.
-	friend ostream& operator<< (ostream& stream, PriorityString& ps);
+	friend ostream& operator<< (ostream& stream, const PriorityString& ps);
 
 
 }; // PriorityString
